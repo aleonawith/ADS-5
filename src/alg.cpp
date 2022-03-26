@@ -35,6 +35,8 @@ int calculate(char op, int a, int b) {
       case '/':
         if (a != 0)
           return b / a;
+      default:
+        return 0;
   }
 }
 
@@ -79,6 +81,7 @@ std::string infx2pstfx(std::string inf) {
     if (post[post.size()-1] == ' ')
       post.erase(post.size()-1);
   }
+  return post;
 }
 
 int eval(std::string pref) {
@@ -95,4 +98,6 @@ int eval(std::string pref) {
       t.push(calculate(pref[i], x, y));
     }
   }
+  res = t.get();
+  return res;
 }
