@@ -21,6 +21,7 @@ int prior(char op) {
       return 5;
     default:
       return 4;
+  }
 }
 
 int calculate(char op, int a, int b) {
